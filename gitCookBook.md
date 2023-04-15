@@ -112,11 +112,9 @@ git push -u gitee lctee[:'master']
 
 不写远程分支名时，自动推送同名分支。若远程仓库无此分支,自动创建。
 
-在gitee实验中，gitee好像仅支持追踪同名分支。
+![image-20230415145254061](https://s2.loli.net/2023/04/15/ogq9r1fCwJYEBkN.png)
 
-理论上，配置好追踪分支后，直接 git push 即可推送，无需再填 <远程仓库>  <本地分支>[:<远程分支>]三个参数。
-
-在执行 git commit 后，可以push。
+此方法在gitee中仍然不行
 
 ## 冲突审阅 -vim
 
