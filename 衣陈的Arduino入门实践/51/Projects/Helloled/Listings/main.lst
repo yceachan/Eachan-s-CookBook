@@ -1,0 +1,30 @@
+C51 COMPILER V9.60.0.0   MAIN                                                              11/26/2022 19:56:36 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include<REG52.H>
+   2          
+   3          void main(void)
+   4          {
+   5   1        P0=0x00;
+   6   1        
+   7   1        //Y4口真值
+   8   1        P25=0;
+*** ERROR C202 IN LINE 8 OF main.c: 'P25': undefined identifier
+   9   1        P26=0;
+*** ERROR C202 IN LINE 9 OF main.c: 'P26': undefined identifier
+  10   1        P27=1;
+*** ERROR C202 IN LINE 10 OF main.c: 'P27': undefined identifier
+  11   1        while(1)
+  12   1        {
+  13   2          
+  14   2        }
+  15   1      }
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  3 ERROR(S)

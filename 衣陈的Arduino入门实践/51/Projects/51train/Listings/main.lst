@@ -1,0 +1,90 @@
+C51 COMPILER V9.60.0.0   MAIN                                                              11/26/2022 20:44:25 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include<REG52.H>
+   2          #include<intrins.h>
+   3          sbit P25=P2^5;
+   4          sbit P26=P2^6;
+   5          sbit P27=P2^7;
+   6          
+   7          void Delay1000ms()    //@11.0592MHz
+   8          {
+   9   1        unsigned char i, j, k;
+  10   1      
+  11   1        _nop_();
+  12   1        _nop_();
+  13   1        i = 43;
+  14   1        j = 6;
+  15   1        k = 203;
+  16   1        do
+  17   1        {
+  18   2          do
+  19   2          {
+  20   3            while (--k);
+  21   3          } while (--j);
+  22   2        } while (--i);
+  23   1      }
+  24          
+  25          
+  26          void main(void)
+  27          {
+  28   1        int i=0;
+  29   1        
+  30   1        
+  31   1        //Y4C置1，锁存器通过P0与灯泡同步
+  32   1        //y4置0
+  33   1        //即74hc138译码器下100
+  34   1        //选用Y4  口
+  35   1        P25=0;
+  36   1        P26=0;
+  37   1        P26=1;
+  38   1        
+  39   1        for(i=0;i<3;i++)
+  40   1        {
+  41   2          P0=0x00;
+  42   2          Delay1000ms();
+  43   2          P0=0xFF;
+  44   2        }
+  45   1        while(1)
+  46   1        {
+  47   2          
+  48   2          //流水
+  49   2          
+  50   2          for(i=0; i<8;i++)
+  51   2          {
+  52   3            P0=!(0x01<<i);
+  53   3          }
+  54   2          Delay1000ms();
+C51 COMPILER V9.60.0.0   MAIN                                                              11/26/2022 20:44:25 PAGE 2   
+
+  55   2          
+  56   2          for(i=0;i<8;i++)
+  57   2          {
+  58   3            P0|=0x01<<i;//把i位拉高
+  59   3          }
+  60   2          Delay1000ms();
+  61   2        }
+  62   1        
+  63   1        
+  64   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    124    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

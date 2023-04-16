@@ -1,0 +1,6 @@
+{
+    "board": "YYZT_AVR_V1.8.5:avr:uno",
+    "sketch": "examples\\01_HC06\\01_ConfigureRun\\01_AVR_Platform\\01_ArduinoUno_Test\\01_ArduinoUno_Test.ino",
+    "port": "COM5",
+    "programmer": "arduino:avrispmkii"
+}
